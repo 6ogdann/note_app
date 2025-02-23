@@ -30,4 +30,5 @@ Hey there! 👋 This is my first project, where I built a **note app** using **H
 - Change the background color of the main page.  
 - Disable **Tasks** and/or **Books** if you don’t need them.  
 
-
+## Easter Egg
+- An Easter egg is hidden for you to discover. If you find it, answer a question about the series 'Porodično blago' to claim your reward. Good luck!
