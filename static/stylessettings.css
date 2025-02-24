@@ -1,0 +1,157 @@
+html {
+    font-family: Consolas;
+}
+
+* {
+    user-select: none;
+}
+
+input, textarea {
+    user-select: text;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url(pexels-rostislav-5011647.jpg);
+    background-size: cover;
+    color: white;
+    background-repeat: no-repeat;
+}
+
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+}
+
+.wrapper {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 90%;
+    max-width: 500px;
+    height: 600px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+h1 {
+    padding-top: 20px;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+form div, p, label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+p {
+    font-size: 18px;
+}
+
+.change-color {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 0;
+    background-color: white;
+}
+
+#blue {
+    background: linear-gradient(to top, rgb(150, 213, 255), rgb(0, 110, 255));
+}
+
+#green {
+    background: linear-gradient(to top, rgb(150, 255, 148), rgb(55, 255, 0));
+}
+
+#red {
+    background: linear-gradient(to top, rgb(255, 150, 150), rgb(250, 0, 0));
+}
+
+#black-gray {
+    background: linear-gradient(to top, rgb(127, 127, 127), rgb(0, 0, 0));
+}
+
+#yellow {
+    background: linear-gradient(to top, rgb(255, 255, 150), rgb(255, 255, 0));
+}
+
+#purple {
+    background: linear-gradient(to top, rgb(179, 150, 207), rgb(137, 43, 226));
+}
+
+div {
+    font-size: 23px;
+    padding: 10px;
+}
+
+dialog {
+    width: 700px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    font-size: 18px;
+}
+
+dialog input {
+    border: 0;
+    border-bottom: 2px solid white;
+    width: 70px;
+    background-color: transparent;
+    color: white;
+    font-size: 18px;
+    font-family: Consolas;
+    text-overflow: ellipsis;
+
+}
+
+dialog input:first-of-type {
+    width: 50px
+}
+
+dialog input, p {
+    gap: 5px;
+}
+
+dialog input:focus {
+    outline: none;
+    color: white;
+    font-size: 18px;
+    font-family: Consolas;
+}
+
+dialog .btn {
+    font-size: 15px;
+    font-family: Consolas;
+    background-color: white;
+    border-radius: 4px;
+    border: 0;
+}
+
+#easterEgg form, #easterEgg1 form, #easterEgg2 form {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column; 
+    text-align: center;
+}
+
+@media(max-width: 1100px){
+    .wrapper {
+        width: min(600px, 100%);
+    }
+}

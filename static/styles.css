@@ -1,0 +1,794 @@
+html {
+    font-family: Consolas;
+}
+
+title {
+    color: white;
+}
+
+* {
+    user-select: none;
+}
+
+input, textarea {
+    user-select: text;
+}
+
+
+body {
+    background-color: rgba(1, 150, 250, 0.7);
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(1, 150, 250, 0.9);
+    width: 96.5%;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    padding-left: 25px;
+    box-sizing: border-box;
+    transition: width 0.5s ease-in-out;
+}
+
+h1 {
+    font-size: 27px;
+    margin: 0;
+    color: white;
+}
+
+header div {
+    display: flex;
+    text-align: right;
+    align-items: center;
+}
+
+header p {
+    font-size: 18px;
+    margin: 0;
+    padding-right: 20px;
+    color: white;
+}
+
+hr {
+    margin-top: 90px;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: black;
+    padding: 0.5px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+header p:hover, h1:hover {
+  /*color: black;*/
+    cursor: pointer;
+}
+
+
+header p:active {
+    /*color: rgba(255, 0, 0, 0.766);*/
+    color: black;
+    cursor: pointer;
+}
+
+.switches {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0; 
+    margin-top: 70px;
+    font-family: Consolas; 
+}
+
+.switches button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.switches button:not(:last-child) {
+    margin-right: 0;
+}
+
+.notes-form, .tasks-form, .books-form {
+    position: relative;
+    background-color: rgb(0, 0, 0, 0.5);
+    margin-top: 10px;
+    padding: 20px;
+    width: 93%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 5px;
+    border-bottom-right-radius: 0;
+    transition: width 0.5s ease-in-out;
+}
+
+.h2desc {
+    padding-top: 0;
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255, 0.5);
+    font-size: 45px;
+    width: 100%;
+    z-index: 1;    
+}
+
+.tasks-form, .books-form {
+    display: none;
+}
+
+.add {
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    background-color: transparent;
+    color: white;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    z-index: 10;
+}
+
+.btn {
+    cursor: pointer;
+    width: 120px;
+    margin: 10px;
+    color: black;
+    background-color: rgb(0, 0, 0, 0.4);
+    border-radius: 2px;
+    margin-bottom: 10px;
+}
+
+.task .btn, .note .btn, .book .btn {
+    align-items: end;
+}
+  
+.close-task-form-btn, .close-note-form-btn, .close-book-form-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+  
+.close-icon {
+    width: 20px;
+    height: 20px;
+}
+  
+.task-form, .note-form, .book-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 370px;
+    background-color: rgb(95,158,160);
+    padding: 15px;
+    z-index: 12;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: auto;
+}
+  
+.task-form-header, .note-form-header, .book-form-header {
+    display: flex;
+    justify-content: flex-end;
+}
+  
+.task-form-body, .note-form-body, .book-form-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+  
+.task-form-footer, .note-form-footer, .book-form-footer {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+  
+.task-form-label,
+.note-form-label,
+.book-form-label,
+#title-input,
+#date-input,
+#description-input {
+    display: block;
+}
+  
+.task-form-label {
+    margin-bottom: 5px;
+    font-size: 20px;
+    color: white;
+}
+  
+#title-input,
+#date-input,
+#description-input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 2px;
+    color: black;
+    text-overflow: ellipsis;
+}
+  
+#confirm-close-dialog {
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 15px;
+}
+  
+.confirm-close-dialog-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+  
+.discard-message-text {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+  
+#tasks-container, #notes-container, #books-container {
+    display: block;
+    position: absolute; 
+    top: 10px;
+    left: 10px;
+    z-index: 11;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.task, .note, .book {
+    display: inline-block;
+    overflow: hidden;
+    padding: 20px;
+    margin: 5px 0;
+    z-index: 10;
+    font-size: 18px;
+    width: 300px;
+    height: 380px;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-overflow: ellipsis;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.task p, .note p, .book p {
+    padding: 10px;
+    width: 300px;
+    font-size: 18px;
+    margin: -10px;
+    text-align: justify;
+    height: 35px;
+}
+
+.task .task-title, .note .note-title, .book .book-title {
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.task .task-date, .note .note-date, .book .book-date {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.task .task-description, .note .note-description, .book .book-description {
+    hyphens: auto;
+    overflow-wrap: break-word;  
+    word-wrap: break-word;       
+    white-space: normal;                       
+    max-width: 100%; 
+    height: 250px;
+    max-height: 250px;
+    overflow: hidden;
+}
+
+.book .book-description {
+    height: 205px;
+}
+
+.tasks-form, .notes-form, .books-form {
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    width: 3.5%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    transition: width 0.5s ease-in-out;
+    top: 0;
+    right: 0;
+    padding-right: 0;
+}
+
+.sidebar:hover {
+    width: 13%;
+}
+
+.sidebar ul {
+    position: relative;
+    height: 100%;
+}
+
+.sidebar ul li {
+    list-style: none;
+}
+
+.sidebar ul li a {
+    position: relative;
+    display: flex;
+    white-space: nowrap;
+    text-decoration: none;
+    justify-content: left;
+}
+
+.sidebar ul li a .icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 60px;
+    font-size: 23px;
+    margin-left: -23px;
+    color: white;
+}
+
+.sidebar ul li a .text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    font-size: 18px;
+    color: white;
+    opacity: 0;
+}
+
+.sidebar:hover ul li a .text {
+    opacity: 1;
+}
+
+.sidebar ul li a .text:hover {
+    color: black;
+}
+
+.icon .text {
+    padding: 10px;
+    color: white;
+}
+
+.sidebar:hover ul li a .time {
+    pointer-events: none;
+    color: white;
+    transition: none;
+    font-size: 23px;
+}
+
+.sidebar .toggle-hover {
+    display: none;
+}
+
+.player {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 96.5%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out; 
+}
+
+.player:hover {
+    height: 70px;
+}
+
+.player button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    margin-right: 5px;
+    border: 0;
+    font-size: 23px;
+}
+
+.player .hid1 {
+    display: none;
+}
+
+.player .hid {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0.5s;
+}
+
+.player:hover .hid {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, visibility 0s 0s;
+}
+
+.song-time {
+    display: flex;
+    right: 25%;
+    color: white;
+    font-size: 20px;
+}
+
+.song-name {
+    display: block;
+    left: 0%;
+    width: 300px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+}
+
+.song-name, .song-time {
+    margin: 100px;
+}
+
+.stay {
+    position: fixed;
+}
+
+button:not(.shuffle):not(.repeat) {
+    color: white;
+}
+
+.shuffle, .repeat {
+    color: white;
+}
+
+.shuffle.active, .repeat.active {
+    color: black;
+}
+
+.sidebar:hover ~ .player, .sidebar:hover ~ .header {
+    width: 87%;
+}
+
+.sidebar:hover ~ * .notes-form,
+.sidebar:hover ~ * .tasks-form,
+.sidebar:hover ~ * .books-form {
+    width: 84% !important;
+}
+
+.player, header {
+    transition: 0.5s ease-in-out;
+}
+
+@media(max-width: 500px){
+    html {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 12%;
+    }
+
+    header, .player {
+        width: 88%;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+    .song-name, .song-time {
+        display: none;
+    }
+
+    .player .hid {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .player:hover, header:hover {
+        width: 88%;
+    }
+
+    .player:hover {
+        height: 60px;
+    }
+
+    .sidebar:hover {
+        width: 12%;
+    }
+
+    .sidebar:active ~ header,.sidebar:active .player {
+        width: 88%;
+    }
+}
+
+@media(max-width: 500px){
+    html {
+        width: min(500px, 100%);
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 14%;
+    }
+
+    header, .player {
+        width: 86%;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+    .song-name, .song-time {
+        display: none;
+    }
+
+    .player .hid {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .player:hover, header:hover {
+        width: 86%;
+    }
+
+    .player:hover {
+        height: 60px;
+    }
+
+    .sidebar:hover {
+        width: 14%;
+    }
+
+    .sidebar:active ~ header,.sidebar:active .player {
+        width: 90%;
+    }
+}
+
+@media(min-width: 500px) and (max-width: 650px){
+    html {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 10%;
+    }
+
+    header, .player {
+        width: 90%;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+    .song-name, .song-time {
+        display: none;
+    }
+
+    .player .hid {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .player:hover, header:hover {
+        width: 90%;
+    }
+
+    .player:hover {
+        height: 60px;
+    }
+
+    .sidebar:hover {
+        width: 10%;
+    }
+
+    .sidebar:active ~ header,.sidebar:active .player {
+        width: 90%;
+    }
+}
+
+@media(min-width: 650px) and (max-width: 750px){
+    html {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 8%;
+    }
+
+    header, .player {
+        width: 92%;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+    .song-name, .song-time {
+        display: none;
+    }
+
+    .player .hid {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .player:hover, header:hover {
+        width: 92%;
+    }
+
+    .player:hover {
+        height: 60px;
+    }
+
+    .sidebar:hover {
+        width: 8%;
+    }
+
+    .sidebar:active ~ header,.sidebar:active .player {
+        width: 92%;
+    }
+}
+
+@media(min-width: 750px) and (max-width: 850px){
+    html {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 6%;
+    }
+
+    header, .player {
+        width: 94%;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+    .song-name, .song-time {
+        display: none;
+    }
+
+    .player .hid {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .player:hover, header:hover {
+        width: 94%;
+    }
+
+    .player:hover {
+        height: 60px;
+    }
+
+    .sidebar:hover {
+        width: 6%;
+    }
+
+    .sidebar:active ~ header,.sidebar:active .player {
+        width: 94%;
+    }
+}
+
+@media(min-width: 850px) and (max-width: 1050px){
+    html {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 6%;
+    }
+
+    header, .player {
+        width: 94%;
+    }
+
+    .song-name, .song-time {
+        display: none;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+
+    .player .hid {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .player:hover, header:hover {
+        width: 94%;
+    }
+
+    .player:hover {
+        height: 60px;
+    }
+
+    .sidebar:hover {
+        width: 6%;
+    }
+
+    .sidebar:active ~ header,.sidebar:active .player {
+        width: 94%;
+    }
+}
+
+@media(min-width: 1050px) and (max-width: 1250px){
+    html {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+
+    .sidebar {
+        width: 4%;
+    }
+
+    .text {
+        visibility: hidden;
+    }
+
+    header, .player {
+        width: 96%;
+    }
+
+    .player .hid {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .player:hover, header:hover {
+        width: 96%;
+    }
+
+    .player:hover {
+        height: 60px;
+    }
+
+    .sidebar:hover {
+        width: 4%;
+    }
+
+    .sidebar:active ~ header,.sidebar:active .player {
+        width: 96%;
+    }
+}

@@ -1,0 +1,90 @@
+html {
+    font-family: Consolas;
+}
+
+* {
+    user-select: none;
+}
+
+input, textarea {
+    user-select: text;
+}
+
+body {
+    min-height: 100vh;
+    overflow: hidden;
+    background-image: url(pexels-rostislav-5011647.jpg);
+    background-size: cover;
+    color: white;
+    background-repeat: no-repeat;
+}
+
+.back {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 30px;
+}
+
+.wrapper {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 90%;
+    max-width: 500px;
+    height: 600px;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+}
+
+h1 {
+    padding-top: 20px;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+form div, p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+#change-picture, #delete-picture, #delete-data, #delete-profile, a {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+#change-picture:hover, #delete-picture:hover , #delete-data:hover , #delete-profile:hover {
+    text-decoration: underline;
+}
+
+div {
+    font-size: 23px;
+    padding: 10px;
+}
+
+div img {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+@media(max-width: 1100px){
+    .wrapper {
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}

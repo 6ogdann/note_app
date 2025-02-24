@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noted - LogIn</title>
+        <link rel="icon" type="image/x-icon" href="../static/edit.png">
+        <link rel="stylesheet" href="../static/styles_login_signup.css"/>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <h1>Welcome back!</h1>
+            <h2>Log In here.</h2>
+            <form id="form">
+                <p id="error-message"></p>
+                <div>
+                    <label for="username-input">
+                        <ion-icon name="person-circle-sharp"></ion-icon>
+                    </label>
+                    <input type="text" name="username" id="username-input" placeholder="Username" required>
+                </div>
+                <div>
+                    <label for="password-input">
+                        <ion-icon name="lock-closed-sharp"></ion-icon>
+                    </label>
+                    <input type="password" name="password" id="password-input" placeholder="Password" required>
+                </div>
+                <div class="remember-me">
+                    <label>
+                    <input type="checkbox" id="remember-me"> Remember Me
+                    </label>
+                </div>
+                <div>
+                    <label for="enterbutton">
+                        <ion-icon name="log-in" id="login-icon"></ion-icon>
+                    </label>
+                    <button type="submit" id="enterbutton" style="display: none;"></button>
+                </div>
+                
+                <p>Don't have an account?<a href="signup.html">Sign Up here.</a></p>
+            </form>
+        </div>
+    </body>
+
+    <script src="../static/login_signup.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

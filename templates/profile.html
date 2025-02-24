@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noted - Profile</title>
+        <link rel="icon" type="image/x-icon" href="../static/edit.png">
+        <link rel="stylesheet" href="../static/stylesprofile.css"/>
+    </head>
+
+    <body>
+        <div class="back">
+            <a href="index.html"><ion-icon name="arrow-back-outline"></ion-icon></a>
+        </div>
+        <div class="wrapper">
+            <h1>Welcome!</h1>
+            <form>
+                <div>
+                    <label for="file-input">
+                        <img src="../static/default1.jpg" id="profile-picture" alt="Profile Picture">
+                    </label>
+                </div>    
+                <div>
+                    <label for="change-picture">
+                        <ion-icon name="image-outline"></ion-icon><input type="file" id="file-input" accept="image/*" style="display: none;">
+                    </label>
+                    <p id="change-picture">Change profile picture.</p>               
+                </div>
+                <div>
+                    <label for="delete-picture">
+                        <ion-icon name="square-outline"></ion-icon>
+                    </label>
+                    <p id="delete-picture">Delete profile picture.</p>
+                </div>   
+                <!--<div>
+                    <label for="delete-data">
+                        <ion-icon name="server-outline"></ion-icon>
+                    </label>
+                    <a href="login.html"><p id="delete-data">Delete your data.</p></a>
+                </div>-->
+                <div>
+                    <label for="delete-profile">
+                        <ion-icon name="cloud-offline-outline"></ion-icon>
+                    </label>
+                    <a href="login.html"><p id="delete-profile">Delete your profile.</p></a>
+                </div>
+            </form>
+        </div>
+    </body>
+
+    <script src="../static/profile.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

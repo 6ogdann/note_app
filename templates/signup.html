@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noted - SignUp</title>
+        <link rel="icon" type="image/x-icon" href="../static/edit.png">
+        <link rel="stylesheet" href="../static/styles_login_signup.css"/>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <h1>Welcome to Noted!</h1>
+            <h2>Sign Up here.</h2>
+            <form id="form">
+                <p id="error-message"></p>
+                <div>
+                    <label for="username-input">
+                        <ion-icon name="person-circle-sharp"></ion-icon>
+                    </label>
+                    <input type="text" name="username" id="username-input" placeholder="Username" required>
+                </div>
+                <div>
+                    <label for="email-input">
+                        <ion-icon name="mail-sharp"></ion-icon>
+                    </label>
+                    <input type="email" name="email" id="email-input" placeholder="Email" required>
+                </div>
+                <div>
+                    <label for="password-input">
+                        <ion-icon name="lock-closed-sharp"></ion-icon>
+                    </label>
+                    <input type="password" name="password" id="password-input" placeholder="Password" required>
+                </div>
+                <div>
+                    <label for="repeat-password-input">
+                        <ion-icon name="lock-closed-sharp"></ion-icon>
+                    </label>
+                    <input type="password" name="repeat-password" id="repeat-password-input" placeholder="Repeat Password" required>
+                </div>
+                <div class="remember-me" style="display: none;">
+                    <label>
+                    <input type="checkbox" id="remember-me"> Remember Me
+                    </label>
+                </div>
+                <div>
+                    <label for="enterbutton">
+                        <ion-icon name="log-in" id="signup-icon"></ion-icon>
+                    </label>
+                    <button type="submit" id="enterbutton" style="display: none;"></button>
+                </div>
+                
+                <p>Already have an account?<a href="login.html">Log In here.</a></p>
+            </form>
+        </div>
+        <span class="icon" id="time" style="display: none;"></span>
+    </body>
+
+    <script src="../static/login_signup.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

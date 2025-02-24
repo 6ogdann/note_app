@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noted - Settings</title>
+        <link rel="icon" type="image/x-icon" href="../static/edit.png">
+        <link rel="stylesheet" href="../static/stylessettings.css"/>
+    </head>
+
+    <body>
+        <dialog id="easterEgg">
+            <form method="dialog">
+              <p class="message-text">Šta Djoša zahteva posle prve bračne noći?</p>
+              <div class="confirm-close">
+                <p class="answer">Voda da bude <input type="text" id="answer1">, kafa da bude <input type="text" id="answer2">!</p>
+                <button id="submit-btn" class="btn" type="submit">
+                  Potvrdi
+                </button>
+                <button id="cancel-btn" class="btn">
+                  Izađi
+                </button>
+              </div>
+            </form>
+        </dialog>
+        <dialog id="easterEgg1">
+            <form method="dialog">
+                <p class="message-text">Čestitam, nagrada te čeka u plejlisti kao poslednja pesma!</p>
+                <button id="cancel-btn" class="btn">
+                    Izađi
+                </button>
+            </form>
+        </dialog>
+        <dialog id="easterEgg2">
+            <form method="dialog">
+                <p class="message-text">Netačan odgovor!</p>
+                <button id="cancel-btn" class="btn">
+                    Pokušaj ponovo
+                </button>
+            </form>
+        </dialog>
+        <div class="back">
+            <a href="index.html" style="color: white;"><ion-icon name="arrow-back-outline"></ion-icon></a>
+        </div>
+        <div class="wrapper">
+            <h1>Settings</h1>
+            <form>
+                <br>
+                <p id="change-background">Change background color.</p>    
+                <div> 
+                    <form>
+                        <label for="change-color"><input type="button" class="change-color" id="red"/></label>
+                        <label for="change-color"><input type="button" class="change-color" id="green"/></label>
+                        <label for="change-color"><input type="button" class="change-color" id="blue"/></label>
+                        <label for="change-color"><input type="button" class="change-color" id="purple"/></label>
+                        <label for="change-color"><input type="button" class="change-color" id="yellow"/></label>
+                        <label for="change-color"><input type="button" class="change-color" id="black-gray"/></label>
+                    </form>                   
+                </div>
+                <div style="font-size: 18px;">
+                    <label>
+                        <input type="checkbox" id="disable-tasks"> Disable tasks.  
+                    </label>
+                </div>   
+                <div style="font-size: 18px;">
+                    <label> 
+                        <input type="checkbox" id="disable-books"> Disable books.
+                    </label>
+                </div>  
+            </form>
+        </div>
+        <div id="easter-egg" style="position: fixed; right: 5px; bottom: 5px; color: white; opacity: 0.5; font-size: 15px; cursor: pointer; rotate: 25deg;">
+            <ion-icon name="egg-outline"></ion-icon>
+        </div>
+    </body>
+
+    <script src="../static/settings.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Noted</title>
+        <link rel="icon" type="image/x-icon" href="../static/edit.png">
+        <link rel="stylesheet" href="../static/styles.css"/>
+    </head>
+
+    <body>
+        
+        <div class="sidebar" id="sidebar">
+            <ul>
+                <li>
+                    <a>
+                        <span class="icon" for="time"><ion-icon name="time-outline"></ion-icon></span>
+                        <span class="text time"><p id="time"></p></span>
+                    </a>
+                <li>
+                    <a href="profile.html">
+                        <span class="icon" for="select-profile"><ion-icon name="person-circle-outline"></ion-icon></span>
+                        <span class="text profile" id="select-profile">Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="settings.html">
+                        <span class="icon" for="select-settings"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="text settings" id="select-settings">Settings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/6ogdann" target="_blank">
+                        <span class="icon about_us" for="select-about-us"><ion-icon name="help-circle-outline"></ion-icon></span>
+                        <span class="text about_us" id="select-about-us">About us</span>
+                    </a>
+                </li>
+                <li>
+                    <label for="select-logout">
+                        <a href="login.html" style="cursor: pointer;" for="select-logout">
+                            <span class="icon" for="select-logout"><ion-icon name="log-out-outline"></ion-icon></span>
+                            <span class="text logout" id="select-logout">Logout</span>
+                        </a>
+                    </label>    
+                    <button id="select-logout" style="display: none;"></button>
+                </li>
+                <li>
+                    <button class="toggle-hover"><ion-icon name="arrow-back-circle-outline"></ion-icon></button>
+                </li>
+            </ul>
+        </div>
+        <header class="header">
+            <h1>Noted - Organise your life</h1>
+        </header>
+        <!--<hr>-->
+
+        <main>
+            <div class="switches">
+                <label for="notes"><button id="notes">Notes</button></label>
+                <label for="tasks"><button id="tasks">Tasks</button></label>
+                <label for="books"><button id="books">Books</button></label>
+            </div>
+            <div class="notes-form">
+                <button class="add" id="add-notes"><ion-icon name="add-sharp"></ion-icon></button>
+                <h2 class="h2desc">Your notes</h2>
+                <form class="note-form hidden" id="note-form">
+                    <div class="note-form-header">
+                      <button id="close-note-form-btn" class="close-note-form-btn" type="button" aria-label="close">
+                        <ion-icon name="close-outline" style="color: white; font-size: 20px;"></ion-icon>
+                      </button>
+                    </div>
+                    <div class="note-form-body">
+                      <label class="note-form-label" for="title-input-notes">Title</label>
+                      <input required type="text" class="form-control" id="title-input-notes" value="" />
+                      <label class="note-form-label" for="date-input-notes">Date</label>
+                      <input type="date" class="form-control" id="date-input-notes" value="" />
+                      <label class="note-form-label" for="description-input-notes">Description</label>
+                      <textarea class="form-control" id="description-input-notes" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="note-form-footer">
+                      <button id="add-or-update-note-btn" class="btn large-btn" type="submit" style="font-size: 15px;">
+                        Add Note
+                      </button>
+                    </div>
+                </form>
+                <div id="notes-container"></div>
+            </div>
+            <div class="tasks-form">
+                <button class="add" id="add-tasks"><ion-icon name="add-sharp"></ion-icon></button>
+                <h2 class="h2desc">Your tasks</h2>
+                <form class="task-form hidden" id="task-form">
+                    <div class="task-form-header">
+                      <button id="close-task-form-btn" class="close-task-form-btn" type="button" aria-label="close">
+                        <ion-icon name="close-outline" style="color: white; font-size: 20px;"></ion-icon>
+                      </button>
+                    </div>
+                    <div class="task-form-body">
+                      <label class="task-form-label" for="title-input-tasks">Title</label>
+                      <input required type="text" class="form-control" id="title-input-tasks" value="" />
+                      <label class="task-form-label" for="date-input-tasks">Date</label>
+                      <input type="date" class="form-control" id="date-input-tasks" value="" />
+                      <label class="task-form-label" for="description-input-tasks">Description</label>
+                      <textarea class="form-control" id="description-input-tasks" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="task-form-footer">
+                      <button id="add-or-update-task-btn" class="btn large-btn" type="submit" style="font-size: 15px;">
+                        Add Task
+                      </button>
+                    </div>
+                </form>
+                <div id="tasks-container"></div>
+            </div>
+            <div class="books-form">
+                <button class="add" id="add-books"><ion-icon name="add-sharp"></ion-icon></button>
+                <h2 class="h2desc">Your books</h2>
+                <form class="book-form hidden" id="book-form">
+                    <div class="book-form-header">
+                      <button id="close-book-form-btn" class="close-book-form-btn" type="button" aria-label="close">
+                        <ion-icon name="close-outline" style="color: white; font-size: 20px;"></ion-icon>
+                      </button>
+                    </div>
+                    <div class="book-form-body">
+                      <label class="book-form-label" for="title-input-books">Title</label>
+                      <input required type="text" class="form-control" id="title-input-books" value="" />
+                      <label class="book-form-label" for="date-input-books">Date</label>
+                      <input type="date" class="form-control" id="date-input-books" value="" />
+                      <label class="book-form-label" for="description-input-books">Description</label>
+                      <textarea class="form-control" id="description-input-books" cols="30" rows="5"></textarea>
+                      <select id="book-option">
+                        <option value="I am planning to read" default>I'm planning to read</option>
+                        <option value="I am currently reading">I'm currently reading</option>
+                        <option value="I have finished reading">I've finished reading</option>
+                      </select>
+                    </div>
+                    <div class="book-form-footer">
+                      <button id="add-or-update-book-btn" class="btn large-btn" type="submit" style="font-size: 15px;">
+                        Add Book
+                      </button>
+                    </div>
+                </form>
+                <div id="books-container"></div>
+            </div>
+            <dialog id="confirm-close-dialog">
+                <form method="dialog">
+                  <p class="discard-message-text">Discard unsaved changes?</p>
+                  <div class="confirm-close-dialog-btn-container">
+                    <button id="cancel-btn" class="btn">
+                      Cancel
+                    </button>
+                    <button id="discard-btn" class="btn">
+                      Discard
+                    </button>
+                  </div>
+                </form>
+            </dialog>
+        </main>
+
+        <div class="player">
+            <p class="song-name stay" id="song-name">Song name</p>
+            <button class="shuffle hid stay" id="select-shuffle"><ion-icon name="shuffle-outline"></ion-icon></button>
+            <button class="previous hid stay" id="select-previous"><ion-icon name="play-skip-back-outline"></ion-icon></button>
+            <button class="play trans stay" id="select-play"><ion-icon name="play-outline"></ion-icon></button>
+            <button class="pause hid1 trans stay" id="select-pause"><ion-icon name="pause-outline"></ion-icon></button>
+            <button class="next hid stay" id="select-next"><ion-icon name="play-skip-forward-outline"></ion-icon></button>
+            <button class="repeat hid stay" id="select-repeat"><ion-icon name="repeat-outline"></ion-icon></button>
+            <p class="song-time stay" id="song-time">00:00</p>
+        </div>
+        
+    </body>
+    <script src="../static/script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</html>
