@@ -32,4 +32,4 @@ Hey there! 👋 This is my first project, where I built a **note app** using **H
 ## Easter Egg
 - An Easter egg is hidden for you to discover. If you find it, answer a question about the series 'Porodično blago' to claim your reward. Good luck!
 
-PS
+P.S. I'm working on transfering to DB instead of local/session Storage.
