@@ -9,7 +9,6 @@ Hey there! 👋 This is my first project, where I built a **note app** using **H
 2. **Log in** – You can create your own profile or use the default login:  
    - **Username:** `admin123`  
    - **Password:** `admin123`  
-   *(make sure to check "Remember Me")*  
 
 ## 📝 Main Features  
 - **Add Notes, Tasks, and Books** – Each with a **title, date, and description**.  
@@ -32,3 +31,5 @@ Hey there! 👋 This is my first project, where I built a **note app** using **H
 
 ## Easter Egg
 - An Easter egg is hidden for you to discover. If you find it, answer a question about the series 'Porodično blago' to claim your reward. Good luck!
+
+PS
