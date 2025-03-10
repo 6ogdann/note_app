@@ -95,6 +95,10 @@ input[type="checkbox"] {
     color: rgba(255, 0, 0, 0.775);
 }
 
+#signup-icon:hover, #login-icon:hover {
+    cursor: pointer;
+}
+
 @media(max-width: 1100px){
     .wrapper {
         width: min(600px, 100%);

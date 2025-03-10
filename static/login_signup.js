@@ -143,12 +143,7 @@ enterButton.addEventListener("click", (e) => {
         }
     }
     if (username.value === "admin123" && password.value === "admin123") {
-        if (rememberMe.checked) {
-            localStorage.setItem("AccountIs", "true");
-        } 
-        else {
-            sessionStorage.setItem("AccountIs", "true");
-        }
+        localStorage.setItem("AccountIs", "true");
         window.location.replace("index.html");
         error_message.innerText = "";
     }
